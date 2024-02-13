@@ -1,0 +1,224 @@
+/* global */
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+body {
+    background-color: #f4f4f4;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* ============= global  ============= */
+
+/* ============= container ============= */
+.container {
+    padding: 0px 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1480px;
+    }
+}
+@media (min-width: 1800px) {
+    .container {
+        max-width: 1640px;
+    }
+}
+/* ============= container ============= */
+
+/* ============= Navbar ============= */
+.nav{
+    height: 60px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+/* ============= Navbar ============= */
+/* ============= Shopping ============= */
+img {
+    width: 150px;
+}
+.shopping {
+    margin-top: 50px;
+}
+.shopping .container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.shopping_box:first-child {
+    flex: 2;
+}
+.shopping_box:last-child {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    align-self: flex-start;
+    position: sticky;
+    top: 0;
+}
+.shopping .items_selector {
+background-color: white;
+padding: 20px;
+display: flex;
+gap: 10px;
+border: 1px solid #ddd;
+}
+.shopping .cart {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.shopping .cart_box {
+    display: flex;
+    justify-content: space-between;
+    flex: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+.shopping .cart_box .box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.shopping .cart .btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.shopping .btns .product_quantity {
+    display: flex;
+}
+.shopping .btns .product_quantity button ,.btns .product_quantity input{
+    border: 1px solid #ddd;
+    outline: none;
+}
+.shopping .btns .product_quantity button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    background-color: white;
+    cursor: pointer;
+}
+.shopping .btns .product_quantity button:first-of-type {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-right: none;
+}
+.shopping .btns .product_quantity button:last-of-type {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-left: none;
+}
+.shopping .btns .product_quantity input {
+    width:  30px;
+    text-align: center;
+}
+.shopping .cart .cart_box .product {
+    display: flex;
+    gap: 15px;
+}
+.shopping .cart .product_info {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.shopping .shopping_box:last-child h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+.shopping .shopping_box:last-child .price {
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.shopping .shopping_box:last-child a {
+background-color: #000;
+font-size: 25px;
+display: block;
+color: white;
+text-align: center;
+padding: 15px 0;
+}
+.product_check {
+    appearance: none;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+.product_check::before{
+    content: "";
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    z-index: 1;
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+    transform: rotate(45deg) scale(0);
+    bottom: 4px;
+}
+.product_check::after{
+    content: "";
+    width: 101%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    transform: scale(0);
+    left: 0;
+}
+.product_check:checked::before{
+transform: scale(1) rotate(45deg);
+}
+.product_check:checked::after{
+    transform: scale(1);
+}
+/* ============= Shopping ============= */
