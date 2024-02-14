@@ -1,0 +1,155 @@
+/* main logo edit */
+#logo {
+  margin-top: 0.6rem;
+  width: 12rem;
+  height: 4rem;
+}
+/* ---------------------------------------------------------------------- */
+/* home - about - contact */
+#home,
+#about,
+#contact {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 2rem;
+}
+/* ---------------------------------------------------------------------- */
+/* search bar */
+#search-container {
+  position: relative;
+  width: 23vw;
+  margin-top: 20px;
+}
+/* search icon logo */
+#search-logo {
+  width: 4vw;
+  height: 2.45rem;
+  position: absolute;
+  right: 0;
+}
+/* search icon text */
+#search-text {
+  width: 20vw;
+  height: 2.15rem;
+  position: absolute;
+  border: 0.1rem;
+  border-color: black;
+  border-style: solid;
+}
+/* ---------------------------------------------------------------------- */
+/* profile logo */
+#profile-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 20px;
+}
+/* ---------------------------------------------------------------------- */
+/* cart */
+#cart-container {
+  position: relative;
+  width: 65px;
+  margin-top: 20px;
+}
+#cart-l {
+  position: absolute;
+}
+#cart-n {
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0.2rem;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  color: aliceblue;
+}
+#cart-logo {
+  width: 2rem;
+  height: 2.5rem;
+}
+#cart-number {
+  font-size: 25px;
+  font-weight: bold;
+}
+/* ---------------------------------------------------------------------- */
+/* nav using grid */
+/* parent */
+#first-nav {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "logo home about contact search profile cart";
+}
+/* child */
+#logo-container {
+  grid-area: logo;
+  margin-left: 1rem;
+}
+#search-container {
+  grid-area: search;
+  margin-left: 5vw;
+}
+#profile-container {
+  grid-area: profile;
+  margin-left: 2vw;
+}
+#cart-container {
+  grid-area: cart;
+}
+#home {
+  grid-area: home;
+}
+#about {
+  grid-area: about;
+}
+#contact {
+  grid-area: contact;
+}
+/* media */
+@media (max-width: 770px) {
+  #first-nav {
+    grid-template-areas: "logo  home  search profile cart";
+  }
+
+  #about {
+    display: none;
+  }
+  #contact {
+    display: none;
+  }
+}
+@media (max-width: 550px) {
+  #first-nav {
+    grid-template-areas: "logo profile cart";
+  }
+  #search-container {
+    display: none;
+  }
+  #about {
+    display: none;
+  }
+  #contact {
+    display: none;
+  }
+
+  #home {
+    display: none;
+  }
+}
+@media (max-width: 340px) {
+  #first-nav {
+    grid-template-areas: "logo cart";
+  }
+  #profile-container {
+    display: none;
+  }
+}
+@media (max-width: 290px) {
+  #first-nav {
+    grid-template-areas: "logo";
+    margin-left: 2vw;
+  }
+  #cart-container {
+    display: none;
+  }
+}
