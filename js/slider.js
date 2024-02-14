@@ -1,5 +1,5 @@
 // using event:on load to play img in header
-var images = ['../img/0.jpg', '../img/1.jpg', '../img/2.jpg','../img/3.jpg','../img/4.jpg']
+var images = ['0.jpg', '1.jpg', '2.jpg','3.jpg','4.jpg']
 var index = 0
 window.onload =function() {
   interv = setInterval(next, 1500);
