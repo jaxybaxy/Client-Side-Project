@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.prodContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 3vw;
+}
+
+.prodCard {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 65vh;
+  margin: auto 2%;
+  margin-top: 5vh;
+  box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 20%);
+  justify-content: space-between;
+  position: relative;
+}
+.prodCard:hover {
+  filter: blur(8px);
+  .prodDetails{
+    display: block;
+  }
+}
+.prodImage {
+  width: 100%;
+  height: 30vh;
+}
+
+.prodTitle {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.priceDiv {
+  display: flex;
+  justify-content: center;
+}
+.prodPrice {
+  /* color: red; */
+  font-size: medium;
+  align-self: self-end;
+  text-decoration: line-through;
+  opacity: 0.5;
+  padding-right: 1vw;
+}
+.prodDscnt {
+  font-size: 2rem;
+}
+.prodSale {
+  /* background-color: rgba(211, 211, 40, 0.301); */
+  position: absolute;
+  top: 0;
+  width: 0;
+	height: 0;
+	border-top: 8vw solid rgb(251, 67, 67);
+	border-right: 9vw solid transparent;
+  opacity: 0.9;
+  p {
+    position: absolute;
+    top: -70px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    /* left: 1vh; */
+  }
+}
+.ratingDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.rateNum {
+  font-size: small;
+  opacity: 0.5;
+  align-self: self-end;
+}
+
+.prodQuant {
+  align-self: center;
+  font-size: 1rem;
+}
+.downQuant {
+  background-color: red;
+  color: #ffffff;
+  border: none;
+  border-radius: 30%;
+  padding: 0.2rem;
+}
+.upQuant {
+  background-color: green;
+  color: #ffffff;
+  border: none;
+  border-radius: 30%;
+  padding: 0.2rem;
+}
+.quantSpan {
+  padding: 0.2rem ;
+}
+.add2Cart {
+  transition-duration: 0.4s;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: #555555;
+  color: #ffffff;
+}
+.add2Cart:hover {
+  background-color: #f0f0f0;
+  color: black;
+}
+.prodDetails {
+  position: relative;
+  bottom : 40vh ;
+  width: 80%;
+  margin: auto;
+  /* display: none; */
+}
+/* Ratin section styles */
+.star-ratings {
+  color: #ccc;
+  position: relative;
+  /* margin: 2vw; */
+  padding: 0;
+  width: max-content;
+  align-self: center;
+}
+
+.fullStar {
+  color: #e7711b;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 18px;
+}
+.emptyStar {
+  padding: 0;
+  z-index: 0;
+  margin-right: 1vw;
+}
