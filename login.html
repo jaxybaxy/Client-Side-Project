@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css1/login.css">
+</head>
+<body>
+    <section class='section__login'>
+        <div class='container'>
+          <form >
+            <span> UserName *</span>
+            <input type='text' name="username" />
+            <span class="user__error">error</span>
+            <span>Password * </span>
+            <input type='password'name="password"   />
+            <span class="password__error">error</span>
+
+            <button class='button__login' disabled>Log in </button>
+            
+          </form>
+        </div>
+      </section>
+
+<script>
+let UserNameInput=document.querySelector("input[type='text']")
+let passwordInput=document.querySelector("input[type='password']")
+let btnLogin=document.querySelector(".button__login")
+let userErr=document.querySelector(".user__error")
+let passErr=document.querySelector(".password__error")
+
+let arrusers=[]
+let arrpass=[]
+window.addEventListener("load",function(){
+    fetch('https://dummyjson.com/users')
+ .then(res => res.json())
+ .then(data=>{
+for (let i = 0; i < 2; i++) {
+    arrusers.push(data.users[i].username)
+    arrpass.push(data.users[i].password)
+
+    console.log("UserName=====>" +data.users[i].username);
+    console.log("passwordFromApi=====>" +data.users[i].password);
+
+}
+
+ });
+})
+
+
+
+
+
+var UserName="";
+UserNameInput.addEventListener("keyup",function(){
+    UserName=UserNameInput.value;
+    
+      for (let i = 0; i <arrusers.length; i++) {
+        if (UserName!=arrusers[i]) {
+            UserNameInput.setAttribute("class","erroruser")
+            btnLogin.disabled =true
+             btnLogin.style.cursor="not-allowed"
+            UserNameInput.style.border="1px solid red";
+            userErr.style.display="block";
+            userErr.style.color="red";
+            userErr.style.margin="-20px 0px 0px 15px";
+            userErr.innerHTML="Sorry,Username not found !"
+
+        } else{
+           // UserNameInput.style.border="1px solid green"
+            userErr.style.display="none";
+            UserNameInput.setAttribute("class","uservalid")
+            UserNameInput.setAttribute("valid","ok")
+            if (UserNameInput.hasAttribute("valid") && passwordInput.hasAttribute("valid") ) {
+                btnLogin.disabled =false
+                btnLogin.style.cursor="pointer"
+                console.log("5555");
+            }
+
+
+            return 
+
+        }
+      }
+      if (UserNameInput.value=="") {
+        userErr.innerHTML="Plz, Enter your username!"
+        
+      }
+
+
+})
+var password="";
+passwordInput.addEventListener("keyup",function(){
+    password=passwordInput.value;
+     if(password!=="" && UserName==""){
+            UserNameInput.style.border="1px solid red";
+            userErr.style.display="block";
+            userErr.style.color="red";
+            userErr.style.margin="-20px 0px 0px 15px";
+            userErr.innerHTML="Sorry,you must write username  !"
+               }
+    for (let i = 0; i <arrpass.length; i++) {
+        if (password!=arrpass[i]) {
+            passwordInput.setAttribute("class","errorpass")
+            passErr.style.display="block";
+            passErr.style.color="red";
+            passErr.style.margin="-20px 0px 0px 15px";
+            passErr.innerHTML="Sorry,password not match with this user !"
+            btnLogin.disabled =true
+                btnLogin.style.cursor="not-allowed"
+                // if (UserName=="") {
+                //     passErr.innerHTML="Sorry, you must write username first!"
+
+                // }
+        }     
+        else{
+            //   here password is match with the target user up!
+            passwordInput.setAttribute("class","passvalid")
+            passwordInput.setAttribute("valid","ok")
+            passErr.style.display="none";
+            if (passwordInput.hasAttribute("valid") && UserNameInput.hasAttribute("valid")) {
+                btnLogin.disabled =false
+                btnLogin.style.cursor="pointer"
+            }
+
+            return 
+
+        }
+        
+      }
+      if (passwordInput.value=="") {
+        passErr.innerHTML="Plz, Enter your password!"
+
+      }
+
+})
+ // this function for login users
+ var arrayUsers=[];
+btnLogin.addEventListener("click",function(e){
+e.preventDefault()
+// here we are fetch login users that are found in api login
+async function fetchUserLogin(){
+ await fetch('https://dummyjson.com/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    username: UserName,
+    password: password,
+  })
+})
+.then(res =>{ 
+    if (!res.ok) {
+      //if the fetch failed 
+               if (UserName=="" && password=="") {
+                alert("you must enter username and password")                
+               }else if(UserName!=="" && password==""){
+                passwordInput.style.border="1px solid red";
+            passErr.style.display="block";
+            passErr.style.color="red";
+            passErr.style.margin="-20px 0px 0px 15px";
+            passErr.innerHTML="Sorry,you must write password  !"
+               }
+               else if(password!=="" && UserName==""){
+                UserNameInput.style.border="1px solid red";
+            userErr.style.display="block";
+            userErr.style.color="red";
+            userErr.style.margin="-20px 0px 0px 15px";
+            userErr.innerHTML="Sorry,you must write username  !"
+               }
+    }else{
+      //if the fetch success and there data of user login
+      return  res.json()
+    }
+
+
+})
+.then(data=>{
+    // if i send error data this massege will apear!
+    if (data.message) {
+        alert("data is not complete"); /*displays error message*/
+      } 
+     // if i send correct data this massege will apear!
+      else {
+             let obj={username:data.username,password,token:data.token}
+               arrayUsers.push(obj)
+             localStorage.setItem("data",JSON.stringify(arrayUsers))
+             alert(`welcome admin : ${data.firstName}  ${data.lastName} 
+             and Your Email is: ${data.email}
+             and Your token for next steps is: ${data.token}
+             `)
+             UserNameInput.value="";
+             passwordInput.value=""
+             window.open("home.html","_blank");
+
+      
+      }
+    })
+.catch((error)=>{
+  //  console.log(error);
+
+}
+
+);
+}
+fetchUserLogin()
+
+
+})
+
+
+
+
+</script>
+
+</body>
+</html>
