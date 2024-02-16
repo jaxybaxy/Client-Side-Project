@@ -20,11 +20,11 @@
 
 const prodCont = document.querySelector(".prodContainer");
 const searchParams = new URLSearchParams(window.location.search);
-console.log(searchParams.get('sort')); // price_descending
+let category = searchParams.get('category'); // price_descending
 
 // console.log(searchParams.has('sort')); // true
 
-let category = "laptops";
+// let category = "laptops";
 // fetch(`https://dummyjson.com/products/category/${category}`)
 // .then(res => res.json())
 // .then(products => console.log(products.products));
