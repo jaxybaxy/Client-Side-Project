@@ -9,13 +9,14 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 3vw;
+  width: 100%;
 }
 
 .prodCard {
   display: flex;
   flex-direction: column;
   width: 20%;
-  height: 65vh;
+  height: 55vh;
   margin: auto 2%;
   margin-top: 5vh;
   box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 20%);
@@ -23,14 +24,61 @@
   position: relative;
 }
 .prodCard:hover {
-  filter: blur(8px);
+  /* filter: blur(8px); */
   .prodDetails{
-    display: block;
+    display: inline-block;
+    z-index: 0;
+    height: fit-content;
+    visibility: visible;
+    border-radius: 2px;
+    padding: 2px;
+    
   }
+    /* filter: blur(8px); */
+    .ratingDiv{
+      position: relative;
+      bottom: -4.2vh;
+    }
+    .priceDiv {
+      position: relative;
+      bottom: -2.7vh;
+    }
+    .prodDesc{
+      position: relative;
+      bottom: -1.4vh;
+    }
+
+  }
+
+  
+  
+  
+  .prodDetails {
+    position: relative;
+    bottom : 28vh ;
+    width: 80%;
+    margin: auto;
+    display: none;
+    color: #2d2b2b;
+    background-color: rgb(217, 214, 210);
+    text-decoration: none;
+    text-align: center;
+
 }
 .prodImage {
   width: 100%;
   height: 30vh;
+}
+
+
+.prodDesc {
+  width: 90%;
+  margin:  2%;
+  overflow:hidden;
+  text-align:start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
 }
 
 .prodTitle {
@@ -43,7 +91,7 @@
   justify-content: center;
 }
 .prodPrice {
-  /* color: red; */
+  color: red;
   font-size: medium;
   align-self: self-end;
   text-decoration: line-through;
@@ -114,13 +162,7 @@
   background-color: #f0f0f0;
   color: black;
 }
-.prodDetails {
-  position: relative;
-  bottom : 40vh ;
-  width: 80%;
-  margin: auto;
-  /* display: none; */
-}
+
 /* Ratin section styles */
 .star-ratings {
   color: #ccc;
