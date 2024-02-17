@@ -48,18 +48,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
+}
 
+.in-profile-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  width: 50%;
+  padding: 40px;
+  display: flex;
   background-color: white;
 }
+
 .profile-image {
-  width: 100px; /* Adjust the size as needed */
-  height: 100px; /* Adjust the size as needed */
-  border-radius: 50%;
+  width: 200px; /* Adjust the size as needed */
+  height: 200px; /* Adjust the size as needed */
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 3px solid black; /* Add a black border */
+  padding: 10px;
+  /* margin: 20px; */
+  margin-top: 60px;
 }
 
 .profile-image img {
@@ -73,7 +86,7 @@ body {
 }
 
 .profile-details h1 {
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
@@ -84,4 +97,10 @@ body {
 .profile-details strong {
   font-weight: bold;
   margin-right: 5px;
+}
+
+@media (max-width: 1100px) {
+  .profile-image {
+    display: none; /* Hide the image when screen width is less than or equal to 600px */
+  }
 }
