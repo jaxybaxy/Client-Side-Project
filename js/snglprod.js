@@ -98,7 +98,7 @@ fetch(`https://dummyjson.com/products/${prodID}`)
             prodSale = document.createElement("p");
             prodSale.innerHTML = `<p>${Math.ceil(product.discountPercentage)}%<br>OFF</p>`;
             prodSale.classList.add("prodSale");
-            prodCard.appendChild(prodSale);
+            priceDiv.appendChild(prodSale);
           } else {
             prodPrice.style.fontSize = "2rem";
             prodPrice.classList.add("prodDscnt");
@@ -173,3 +173,14 @@ fetch(`https://dummyjson.com/products/${prodID}`)
         })
 
   });
+  const menu = document.getElementsByClassName('fa-solid')[0];
+  const categories = document.getElementById('all-cat-container');
+  menu.addEventListener('click' , ()=>{
+    if (categories.style.display == 'none'){
+      console.log('none');
+      categories.style.display = 'flex';
+    } else {
+      categories.style.display = 'none';
+      console.log('flex');
+    }
+  })

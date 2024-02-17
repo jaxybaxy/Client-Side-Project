@@ -2,11 +2,17 @@
 // import cartNumebr from './nav.js';
 const prodCont = document.querySelector(".prodContainer");
 const searchParams = new URLSearchParams(window.location.search);
-let category = searchParams.get('category'); // price_descending
+if (searchParams.get('category')){
+  var category = searchParams.get('category'); // price_descending
+  document.title = category ;
+  var link = `https://dummyjson.com/products/category/${category}`;
+} else {
+  var link = `https://dummyjson.com/products`;
+  document.title = 'Our Products' ;
+}
 
-document.title = category ;
 
-fetch(`https://dummyjson.com/products/category/${category}`)
+fetch(link)
   .then((res) => res.json())
   .then((products) => {
     products.products.forEach((element) => {
@@ -75,47 +81,6 @@ fetch(`https://dummyjson.com/products/category/${category}`)
       //// Product rating start
       let rate = (element.rating / 5) * 100;
 
-      //&#9733;
-      // const fullStar = `
-      //   <div class="fullStar" style="width:${rate}%">
-      //   <span>★★★★★</span>
-      //   </div>
-      //   `;
-      // const emptyStar = `
-      //   <div class="emptyStar">
-      //   <span>★★★★★</span>
-      //   </div>
-     
-      //   `;
-      // prodRating = document.createElement("div");
-      // prodRating.innerHTML = emptyStar + fullStar;
-      // prodRating.classList.add("prodRating");
-      // prodRating.classList.add("star-ratings");
-
-      // //Product rating number
-      // const rateNum = document.createElement("p");
-      // rateNum.innerText = element.rating;
-      // rateNum.classList.add("rateNum");
-
-      // //Product rating div
-      // const ratingDiv = document.createElement("div");
-      // ratingDiv.appendChild(prodRating);
-      // ratingDiv.appendChild(rateNum);
-      // prodCard.appendChild(ratingDiv);
-      // ratingDiv.classList.add("ratingDiv");
-
-//       //Product Order Quantity
-//       // console.log(element.stock);
-//       prodQuant = document.createElement("div");
-//       // <p> In Stock : ${element.stock}</P>
-//       prodQuant.innerHTML = `
-
-//         <button class="downQuant" onClick='decreaseCount(event, this , ${element.stock})'>▼</button>
-//         <span class="quantSpan">1</span>
-//         <button class="upQuant" onClick='increaseCount( event,this , ${element.stock})'>▲</button>
-// `;
-//       prodQuant.classList.add("prodQuant");
-//       prodCard.appendChild(prodQuant);
 
       //Add to cart button
       add2Cart = document.createElement("button");
@@ -163,3 +128,14 @@ fetch(`https://dummyjson.com/products/category/${category}`)
       };
   });
 
+const menu = document.getElementsByClassName('fa-solid')[0];
+const categories = document.getElementById('all-cat-container');
+menu.addEventListener('click' , ()=>{
+  if (categories.style.display == 'none'){
+    console.log('none');
+    categories.style.display = 'flex';
+  } else {
+    categories.style.display = 'none';
+    console.log('flex');
+  }
+})
