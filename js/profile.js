@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       // document.getElementById("password").textContent = userData.password;
       document.getElementById("birthdate").textContent = userData.birthDate;
     } else {
+      // alert("Please Login First");
       window.location.href = "login.html";
-      alert("Please Login First");
     }
   } else {
     // If token doesn't exist in local storage, redirect to login page or display message
+    // alert("Please Login First");
     window.location.href = "login.html"; // Redirect to login page
-    alert("Please Login First");
   }
 });
