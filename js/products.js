@@ -1,33 +1,10 @@
-// {
-//     "id": 1,
-//     "title": "iPhone 9",
-//     "description": "An apple mobile which is nothing like apple",
-//     "price": 549,
-//     "discountPercentage": 12.96,
-//     "rating": 4.69,
-//     "stock": 94,
-//     "brand": "Apple",
-//     "category": "smartphones",
-//     "thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-//     "images": [
-//         "https://cdn.dummyjson.com/product-images/1/1.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/2.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/3.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/4.jpg",
-//         "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-//     ]
-// }
 
+// import cartNumebr from './nav.js';
 const prodCont = document.querySelector(".prodContainer");
 const searchParams = new URLSearchParams(window.location.search);
 let category = searchParams.get('category'); // price_descending
 
-// console.log(searchParams.has('sort')); // true
-
-// let category = "laptops";
-// fetch(`https://dummyjson.com/products/category/${category}`)
-// .then(res => res.json())
-// .then(products => console.log(products.products));
+document.title = category ;
 
 fetch(`https://dummyjson.com/products/category/${category}`)
   .then((res) => res.json())
@@ -48,6 +25,9 @@ fetch(`https://dummyjson.com/products/category/${category}`)
       prodImage.classList.add("prodImage");
       prodCard.appendChild(prodImage);
       
+
+
+
       
         //Product description
         prodDesc = document.createElement('p');
@@ -96,33 +76,33 @@ fetch(`https://dummyjson.com/products/category/${category}`)
       let rate = (element.rating / 5) * 100;
 
       //&#9733;
-      const fullStar = `
-        <div class="fullStar" style="width:${rate}%">
-        <span>★★★★★</span>
-        </div>
-        `;
-      const emptyStar = `
-        <div class="emptyStar">
-        <span>★★★★★</span>
-        </div>
+      // const fullStar = `
+      //   <div class="fullStar" style="width:${rate}%">
+      //   <span>★★★★★</span>
+      //   </div>
+      //   `;
+      // const emptyStar = `
+      //   <div class="emptyStar">
+      //   <span>★★★★★</span>
+      //   </div>
      
-        `;
-      prodRating = document.createElement("div");
-      prodRating.innerHTML = emptyStar + fullStar;
-      prodRating.classList.add("prodRating");
-      prodRating.classList.add("star-ratings");
+      //   `;
+      // prodRating = document.createElement("div");
+      // prodRating.innerHTML = emptyStar + fullStar;
+      // prodRating.classList.add("prodRating");
+      // prodRating.classList.add("star-ratings");
 
-      //Product rating number
-      const rateNum = document.createElement("p");
-      rateNum.innerText = element.rating;
-      rateNum.classList.add("rateNum");
+      // //Product rating number
+      // const rateNum = document.createElement("p");
+      // rateNum.innerText = element.rating;
+      // rateNum.classList.add("rateNum");
 
-      //Product rating div
-      const ratingDiv = document.createElement("div");
-      ratingDiv.appendChild(prodRating);
-      ratingDiv.appendChild(rateNum);
-      prodCard.appendChild(ratingDiv);
-      ratingDiv.classList.add("ratingDiv");
+      // //Product rating div
+      // const ratingDiv = document.createElement("div");
+      // ratingDiv.appendChild(prodRating);
+      // ratingDiv.appendChild(rateNum);
+      // prodCard.appendChild(ratingDiv);
+      // ratingDiv.classList.add("ratingDiv");
 
 //       //Product Order Quantity
 //       // console.log(element.stock);
@@ -159,48 +139,27 @@ fetch(`https://dummyjson.com/products/category/${category}`)
     for (i = 0; i < cartButtons.length; i++) {
         // console.log(cartButtons[i].id);
         cartButtons[i].addEventListener("click", (event) => {
-            // console.log("llll", event.target.id);
-            // console.log("llll", event.target.value);
-            if (localStorage.getItem('cartItems')){
-              cart.forEach((item) => {
-                  if (item[0] == event.target.id  ){
-                    item[1] = (parseInt(item[1]) + parseInt(event.target.value)).toString();
-                    console.log(cart);
-                    console.log('yes');
-                  } else {
-                    console.log('yessss');
-                    cart.push([event.target.id, event.target.value]);
-                    localStorage.setItem("cartItems" ,cart )
-               }
-              })
-            } else {
-            console.log('added');
-              var cart = [];
-              cart.push([event.target.id, event.target.value]);
-              console.log(cart);
+
+          if (!localStorage.getItem('cartItems')){
+              cart = [];
+              cart.push(event.target.id);
+              localStorage.setItem("cartItems", JSON.stringify(cart));
+          } else {
+             cart = JSON.parse(localStorage.getItem('cartItems'));
+             cartIDs = [];
+             cart.forEach((item)=>{
+              console.log(item);
+              cartIDs.push(item);
+              console.log(cartIDs);
+             })
+              if (!(cartIDs.includes(event.target.id))){
+                cart.push(event.target.id)
+                localStorage.setItem("cartItems", JSON.stringify(cart));
+              }
+
             }
-            localStorage.setItem("cartItems", JSON.stringify(cart));
+            // cartNumebr();
         });
       };
   });
 
-function increaseCount(a, b, stock) {
-  var quant = b.previousElementSibling;
-  var quantVal = quant.innerText;
-  if (quantVal <= stock) {
-    quantVal++;
-    quant.innerText = quantVal;
-    quant.parentElement.nextElementSibling.value = quantVal;
-  }
-}
-
-function decreaseCount(a, b, stock) {
-  var quant = b.nextElementSibling;
-  var quantVal = quant.innerText;
-  if (quantVal > 1) {
-    quantVal--;
-    quant.innerText = quantVal;
-    quant.parentElement.nextElementSibling.value = -quantVal;
-
-  }
-}

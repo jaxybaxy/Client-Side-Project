@@ -23,6 +23,7 @@
   justify-content: space-between;
   position: relative;
 }
+
 .prodCard:hover {
   /* filter: blur(8px); */
   .prodDetails{
@@ -35,17 +36,17 @@
     
   }
     /* filter: blur(8px); */
-    .ratingDiv{
+    /* .ratingDiv{
       position: relative;
       bottom: -4.2vh;
-    }
+    } */
     .priceDiv {
       position: relative;
-      bottom: -2.7vh;
+      bottom: -6vh;
     }
     .prodDesc{
       position: relative;
-      bottom: -1.4vh;
+      bottom: -3vh;
     }
 
   }
