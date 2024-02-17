@@ -24,5 +24,3 @@ export function cartNumber() {
     cartNumElement.innerText = 0;
   }
 }
-
-
