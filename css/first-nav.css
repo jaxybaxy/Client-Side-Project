@@ -4,6 +4,11 @@
   width: 12rem;
   height: 4rem;
 }
+#logo1 {
+  margin-top: 1.2rem;
+  width: 3rem;
+  display: none;
+}
 /* ---------------------------------------------------------------------- */
 /* home - about - contact */
 #home,
@@ -21,7 +26,8 @@
   margin-top: 20px;
 }
 /* search icon logo */
-#search-logo,#search-logo1 {
+#search-logo,
+#search-logo1 {
   width: 4vw;
   height: 2.45rem;
   position: absolute;
@@ -73,7 +79,6 @@
   font-size: 15px;
   font-weight: bold;
   position: relative;
-
 }
 /* ---------------------------------------------------------------------- */
 /* nav using grid */
@@ -108,37 +113,45 @@
 #contact {
   grid-area: contact;
 }
+
 /* media */
-@media (max-width: 770px) {
+@media (max-width: 900px) {
   #first-nav {
-    grid-template-areas: "logo  home  search profile cart";
+    grid-template-areas: "logo  home contact search profile cart";
   }
 
   #about {
     display: none;
   }
-  #contact {
+  #logo {
     display: none;
   }
+  #logo1 {
+    display: block;
+  }
 }
-@media (max-width: 550px) {
+
+@media (max-width: 450px) {
   #first-nav {
-    grid-template-areas: "logo profile cart";
+    grid-template-areas: "logo home profile cart";
   }
   #search-container {
     display: none;
   }
-  #about {
-    display: none;
-  }
   #contact {
     display: none;
   }
 
-  #home {
+  /* #home {
+    display: none;
+  } */
+
+  #contact {
     display: none;
   }
 }
+
+/* 
 @media (max-width: 340px) {
   #first-nav {
     grid-template-areas: "logo cart";
@@ -155,4 +168,4 @@
   #cart-container {
     display: none;
   }
-}
+} */
