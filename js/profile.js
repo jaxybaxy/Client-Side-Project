@@ -1,17 +1,16 @@
-// localStorage.setItem(
-//   "data",
-//   JSON.stringify({
-//     id: 15,
-//     username: "kminchelle",
-//     email: "kminchelle@qq.com",
-//     firstName: "Jeanne",
-//     lastName: "Halvorson",
-//     gender: "female",
-//     image: "https://robohash.org/Jeanne.png?set=set4",
-//     token:
-//       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvSmVhbm5lLnBuZz9zZXQ9c2V0NCIsImlhdCI6MTcwODExNjM1MSwiZXhwIjoxNzA4MTE5OTUxfQ.nuikJCxXzxw6esUIC4dl2LxDBIwuP_CcBOzCPCgFfxM",
-//   })
-// );
+localStorage.setItem(
+  "data",
+  JSON.stringify({
+    id: 15,
+    username: "kminchelle",
+    email: "kminchelle@qq.com",
+    firstName: "Jeanne",
+    lastName: "Halvorson",
+    gender: "female",
+    image: "https://robohash.org/Jeanne.png?set=set4",
+    token:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvSmVhbm5lLnBuZz9zZXQ9c2V0NCIsImlhdCI6MTcwODExNjM1MSwiZXhwIjoxNzA4MTE5OTUxfQ.nuikJCxXzxw6esUIC4dl2LxDBIwuP_CcBOzCPCgFfxM"  })
+);
 
 const userFetchedData = async (token) => {
   try {
@@ -62,4 +61,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     // alert("Please Login First");
     window.location.href = "login.html"; // Redirect to login page
   }
+});
+
+let btnLogout = document.querySelector(".logout");
+btnLogout.addEventListener("click", function () {
+  console.log("working");
+
+  localStorage.removeItem("data");
+  location.replace("login.html");
 });

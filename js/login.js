@@ -15,7 +15,7 @@ for (let i = 0; i < 2; i++) {
 
 let arrDataUserFromLocal=JSON.parse(localStorage.getItem("data"))   
       if (localStorage.getItem("data")!=null) {
-        location.assign("homelogout.html")
+        location.assign("home.html")
 
     
       }
@@ -168,7 +168,7 @@ let objUser={username:data.username,token:data.token}
              //  arrayUsers.push(obj)
              localStorage.setItem("data",JSON.stringify(objUser))
             //  console.log(` and Your token for next steps is: ${data.token} `)
-             location.replace("homelogout.html");
+             location.replace("home.html");
 
 }
     })
