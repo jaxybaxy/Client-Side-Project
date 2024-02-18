@@ -9,7 +9,7 @@
   width: 100%;
   height: fit-content;
   display: grid;
-  column-gap: 4vw;
+  column-gap: 2vw;
   grid-template-areas:
     "prodImage prodTitle prodTitle"
     "prodImage prodDesc prodDesc"
@@ -151,14 +151,13 @@
   margin-top: 1.5vh;
 }
 #all-cat-container div a {
-
   color: #f0f0f0;
 }
 #all-cat-container div:hover {
   background-color: #f0f0f0;
   text-align: center;
 }
-#all-cat-container div:hover a{
+#all-cat-container div:hover a {
   background-color: #f0f0f0;
   text-align: center;
   color: #24262b;

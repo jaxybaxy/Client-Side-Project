@@ -94,3 +94,9 @@ border: 1px solid green !important;
 .erroruser__input,.errorpass__input{
     border: 1px solid red!important;
     }
+
+    .logo {
+      width :50% ;
+      margin: auto;
+      padding: 3vh 0 3vh 0;
+    }

@@ -71,6 +71,8 @@
 #cart-number {
   font-size: 25px;
   font-weight: bold;
+  position: relative;
+
 }
 /* ---------------------------------------------------------------------- */
 /* nav using grid */
