@@ -1,8 +1,11 @@
+
 let cart = document.querySelector(".cart");
 let cartItem = JSON.parse(localStorage.getItem("cartItems"));
 let totalPrice = document.querySelector(".totalPrice");
 let checkout = document.querySelector(".oraderSummary a");
+let cartNumber = document.getElementById("cart-number");
 let total = 0;
+let quant = 0;
 cartItem.forEach((e)=>{
   fetch(`https://dummyjson.com/products/${e.id}`)
   .then((res) => {
@@ -12,12 +15,10 @@ cartItem.forEach((e)=>{
     return res.json();
 })
 .then((data) => {
-  console.log(data)
     let id = data.id;
       let image = data.images[0];
       let title = data.title;
       let desc = data.description;
-    //   let price = e.price;
       let price = Math.ceil(data.price - (data.price * (Math.ceil(data.discountPercentage)/100)));
       cartItem.filter((i) => {
           if (i.id == id) {
@@ -93,6 +94,11 @@ cartItem.forEach((e)=>{
           cartBox.appendChild(totalBox);
           cartBox.appendChild(removeIcon);
           
+          // cart number
+            function cartNum(change){
+              quant+= change;
+              cartNumber.innerText = quant;
+            }
           // update the Amount
           function changeAmount(change) {
             let amount = +amountBox.innerText;
@@ -118,6 +124,7 @@ cartItem.forEach((e)=>{
           // Increment Function
         incrementBtn.addEventListener("click",()=>{
             changeAmount(1);
+            cartNum(1)
             changeProductTotal();
             // updateTotal;
             total += parseInt(priceBox.innerText);
@@ -126,10 +133,12 @@ cartItem.forEach((e)=>{
           // Decrement Function
         decrementBtn.addEventListener("click",()=>{
             changeAmount(-1);
+            cartNum(-1);
             changeProductTotal();
             // updateTotal;
             total -= parseInt(priceBox.innerText);
             totalPrice.innerText = `${total}$`
+          
           });
           // Remove Product with remove icon
           removeIcon.addEventListener("click" ,()=>{
@@ -140,17 +149,18 @@ cartItem.forEach((e)=>{
                 // updateTotal;
                 total -= parseInt(totalBox.innerText);
                 totalPrice.innerText = `${total}$`
+                cartNum(-i.quantity);
               })
+              cartNum(i.quantity);
             changeProductTotal();
             total += parseInt(totalBox.innerText);
             totalPrice.innerText = `${total}$`;
         }
       });
-    });
+    }).catch((error) => {
+        console.error(error);
   })
-  .catch((error) => {
-      console.error(error);
-})
+    })
 
 
 

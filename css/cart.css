@@ -16,6 +16,11 @@ a {
     text-decoration: none;
 }
 /* ============= global  ============= */
+/* ============= nav  ============= */
+#first-nav {
+    background-color: white;
+}
+/* ============= nav  ============= */
 
 /* ============= container ============= */
 .container {
