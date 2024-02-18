@@ -10,6 +10,8 @@ if (searchParams.get('category')) {
 } else {
   var link = `https://dummyjson.com/products`;
   document.title = 'Our Products';
+
+
 }
 
 
@@ -85,7 +87,12 @@ fetch(link)
             add2Cart.insertAdjacentElement("beforeBegin", prodDetails);
 
             prodCont.appendChild(prodCard);
+
+
+
+
           });
+
 
 
           //Add products to cart
