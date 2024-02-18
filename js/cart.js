@@ -1,3 +1,6 @@
+import { cartNumber } from "./nav.js";
+
+
 let cart = document.querySelector(".cart");
 let cartItem = JSON.parse(localStorage.getItem("cartItems"));
 let totalPrice = document.querySelector(".totalPrice");
@@ -12,13 +15,11 @@ cartItem.forEach((e)=>{
     return res.json();
 })
 .then((data) => {
-  console.log(data)
     let id = data.id;
       let image = data.images[0];
       let title = data.title;
       let desc = data.description;
-      let price = (data.discountPercentage > 10 )? Math.ceil(data.price-(data.price * (Math.ceil(data.discountPercentage)/100))) 
-      : data.price ;
+      let price = Math.ceil(data.price - (data.price * (Math.ceil(data.discountPercentage)/100)));
       cartItem.filter((i) => {
           if (i.id == id) {
           // Create cart box
@@ -122,6 +123,7 @@ cartItem.forEach((e)=>{
             // updateTotal;
             total += parseInt(priceBox.innerText);
             totalPrice.innerText = `${total}$`
+            cartNumber();
           });
           // Decrement Function
         decrementBtn.addEventListener("click",()=>{
@@ -144,13 +146,13 @@ cartItem.forEach((e)=>{
             changeProductTotal();
             total += parseInt(totalBox.innerText);
             totalPrice.innerText = `${total}$`;
+            cartNumber()
         }
       });
-    });
+    }).catch((error) => {
+        console.error(error);
   })
-  .catch((error) => {
-      console.error(error);
-})
+    })
 
 
 

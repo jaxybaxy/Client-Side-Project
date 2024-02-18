@@ -4,7 +4,7 @@
 padding: 0;
 margin: 0;
 box-sizing: border-box;
-/* font-family: "Poppins", sans-serif; */
+font-family: "Poppins", sans-serif;
 }
 body {
     background-color: #f4f4f4;
@@ -16,6 +16,11 @@ a {
     text-decoration: none;
 }
 /* ============= global  ============= */
+/* ============= nav  ============= */
+#first-nav {
+    background-color: white;
+}
+/* ============= nav  ============= */
 
 /* ============= container ============= */
 .container {
