@@ -1,5 +1,9 @@
 import { cartNumber } from "./nav.js";
 
+// addEventListener("DOMContentLoaded", (event) => {
+//   cartNumber();
+// });
+
 const prodCont = document.querySelector(".prodContainer");
 const searchParams = new URLSearchParams(window.location.search);
 if (searchParams.get("category")) {
@@ -52,7 +56,6 @@ fetch(link)
       if (element.discountPercentage >= 10) {
         prodDscnt.classList.add("prodDscnt");
         prodPrice.classList.add("prodPrice");
-
       } else {
         prodPrice.style.fontSize = "2rem";
         prodPrice.classList.add("prodDscnt");
@@ -103,8 +106,7 @@ fetch(link)
     }
   });
 
-
-  //Toggle categories section visibility
+//Toggle categories section visibility
 const menu = document.getElementsByClassName("fa-solid")[0];
 const categories = document.getElementById("all-cat-container");
 menu.addEventListener("click", () => {
