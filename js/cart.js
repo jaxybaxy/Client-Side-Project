@@ -94,6 +94,14 @@ cartItem.forEach((e)=>{
           cartBox.appendChild(totalBox);
           cartBox.appendChild(removeIcon);
           
+          function showCartStatus(cart) {
+            if (cart.length === 1) {
+                console.log("Your cart is empty.");
+            } else {
+                console.log("Your cart contains items.");
+            }
+        }
+        
           // cart number
             function cartNum(change){
               quant+= change;

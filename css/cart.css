@@ -321,3 +321,7 @@ display: inline-flex !important;
 justify-content: center;
 align-items: center;
 }
+.footer {
+    position: relative;
+    bottom: -68px;
+}
