@@ -74,6 +74,8 @@ headers: { 'Content-Type': 'application/json' },
 body: JSON.stringify({
   username: userName,
   password: password,
+  // expire in 1 month
+  expiresInMins:43200
 })
 })
 .then(res =>{ 
