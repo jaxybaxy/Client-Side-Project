@@ -165,5 +165,74 @@
 .fa-solid {
   float: right;
   font-size: 3rem;
-  padding-right: 2vw;
+  padding-right: 3.5vw;
+}
+@media only screen and (max-width: 768px) {
+  /* .prodCard {
+    width: 40%;
+    height: 35vh;
+  } */
+  .prodImage {
+    height:40vh;
+    width: 90%;
+    margin: auto;
+  }
+  .prodTitle {
+    font-size: x-large;
+  }
+  #all-cat-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #all-cat-container div {
+    width: 35%;
+    color: #f0f0f0;
+    margin-top: 1.5vh;
+    margin: auto;
+  }
+
+
+}
+@media only screen and (max-width: 575.98px) {
+  .prodCard {
+    display: grid;
+    row-gap: 2vw;
+    grid-template-areas:
+      "prodImage"
+      "prodTitle"
+      "prodDesc"
+      "priceDiv"
+      "prodBrand"
+      "ratingDiv"
+      "add2Cart";
+  }
+  .prodSale {
+    height: 8vh;
+    width: 8vh;
+    p {
+      font-size: medium;
+    }
+  }
+  .prodPrice {
+    font-size: xx-large;
+  }
+  .add2Cart {
+    font-size: x-large;
+  }
+  .fullStar , .emptyStar{
+    width: 20%;
+  }
+  .prodBrand{
+    word-wrap: none;
+    font-size: x-large;
+  }
+  .footer {
+    text-align: center ;
+
+  }
+  .fa-solid {
+    float: right;
+    font-size: 2rem;
+    padding-right: 8vw;
+  }
 }
