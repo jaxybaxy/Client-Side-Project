@@ -17,8 +17,8 @@ cartItem.forEach((e)=>{
       let image = data.images[0];
       let title = data.title;
       let desc = data.description;
-    //   let price = e.price;
-      let price = Math.ceil(data.price - (data.price * (Math.ceil(data.discountPercentage)/100)));
+      let price = (data.discountPercentage > 10 )? Math.ceil(data.price-(data.price * (Math.ceil(data.discountPercentage)/100))) 
+      : data.price ;
       cartItem.filter((i) => {
           if (i.id == id) {
           // Create cart box
