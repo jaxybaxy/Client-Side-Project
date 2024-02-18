@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <div class="name-admin"></div>
-    <div class="logout_up">
-      <button class="logout">logout</button>
-      </div>
+  <div class="name-admin"></div>
+  <div class="logout_up">
+    <button class="logout">logout</button>
+  </div>
 
-    <script>
+  <script>
 
-// data from localstorage and check if found or not!
-let objUser=JSON.parse(localStorage.getItem("data"))   
-      if (localStorage.getItem("data")!=null) {
-        console.log("hello " + objUser.username)
-        //console.log(objUser.expiry);
-       // console.log(new Date().getTime());
-        if (new Date().getTime() > objUser.expiry ) {
-          localStorage.removeItem("data")
+    // data from localstorage and check if found or not!
+    let objUser = JSON.parse(localStorage.getItem("data"))
+    if (localStorage.getItem("data") != null) {
+      console.log("hello " + objUser.username)
+      //console.log(objUser.expiry);
+      // console.log(new Date().getTime());
+      if (new Date().getTime() > objUser.expiry) {
+        localStorage.removeItem("data")
 
 
-        }
       }
-      else{
-        location.replace("login.html")
+    }
+    else {
+      location.replace("login.html")
 
     }
-// here button logout of user
-let btnLogout=document.querySelector(".logout")
-btnLogout.addEventListener("click",function(){
-localStorage.removeItem("data")
-location.replace("login.html")
-})
+    // here button logout of user
+    let btnLogout = document.querySelector(".logout")
+    btnLogout.addEventListener("click", function () {
+      localStorage.removeItem("data")
+      location.replace("login.html")
+    })
 
-</script>
+  </script>
 </body>
+
 </html>
