@@ -14,6 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
   </head>
+
   <body>
     <header id="header"></header>
 
@@ -21,71 +22,75 @@
       <div id="logo-container">
         <img id="logo" src="../img/logo.png" alt="LOGO image" />
       </div>
-      <div id="home"><a href="#">Home</a></div>
-      <div id="about"><a href="#">About Us</a></div>
-      <div id="contact"><a href="#">Contact</a></div>
+      <div id="home"><a href="home.html">Home</a></div>
+      <div id="about"><a href="#footer">About Us</a></div>
+      <div id="contact"><a href="products.html">Our Products</a></div>
       <div id="search-container">
         <input id="search-text" type="text" placeholder="search item" />
         <input
-          id="search-logo"
+          id="search-logo1"
           type="image"
           src="../img/search.jpg"
           alt="search logo image"
         />
       </div>
       <div id="profile-container">
-        <input
-          id="profile-logo"
-          type="image"
-          src="../img/profile.jpg"
-          alt="profile logo image"
-        />
+        <a href="profile.html">
+          <img
+            id="profile-logo"
+            src="../img/profile.jpg"
+            alt="profile logo image"
+          />
+        </a>
       </div>
       <div id="cart-container">
-        <div id="cart-l">
-          <input
-            id="cart-logo"
-            type="image"
-            src="../img/cart.jpg"
-            alt="cart logo image"
-          />
-        </div>
+        <a href="cart.html">
+          <div id="cart-l">
+            <img
+              id="cart-logo"
+              src="../img/cart.jpg"
+              alt="cart logo image"
+            />
+          </div>
+        </a>
         <div id="cart-n">
-          <div id="cart-number">1</div>
+          <div id="cart-number">0</div>
         </div>
       </div>
+      
     </div>
 
     <div id="main-container">
       <div id="return-home">
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="home.html">Home</a>
           </li>
           <li>/ Manage My Account</li>
         </ul>
       </div>
       <div>
         <div class="profile-container">
-          <div class="profile-header">
-            <h1>MANAGE MY ACCOUNT</h1>
-          </div>
-          <div class="in-profile-container">
-
-            <div class="profile-image">
-              <img id="user-image" src="" alt="User Image" />
+          
+            <div class="profile-header">
+              <h1>MANAGE MY ACCOUNT</h1>
             </div>
-            <div class="profile-details">
-              <p><strong>Username:</strong> <span id="username"></span></p>
-              <p><strong>Email:</strong> <span id="email"></span></p>
-              <p><strong>Name:</strong> <span id="name"></span></p>
-              <p><strong>Phone:</strong> <span id="phone"></span></p>
-              <p><strong>Age:</strong> <span id="age"></span></p>
-              <p><strong>Gender:</strong> <span id="gender"></span></p>
-              <p><strong>height:</strong> <span id="height"></span></p>
-              <p><strong>weight:</strong> <span id="weight"></span></p>
-              <p><strong>Birth Date:</strong> <span id="birthdate"></span></p>
-              <!-- <p><strong>Password:</strong> <span id="password"></span></p> -->
+            <div class="in-profile-container">
+              <div class="profile-image">
+                <img id="user-image" src="" alt="User Image" />
+              </div>
+              <div class="profile-details">
+                <p><strong>Username:</strong> <span id="username"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Name:</strong> <span id="name"></span></p>
+                <p><strong>Phone:</strong> <span id="phone"></span></p>
+                <p><strong>Age:</strong> <span id="age"></span></p>
+                <p><strong>Gender:</strong> <span id="gender"></span></p>
+                <p><strong>height:</strong> <span id="height"></span></p>
+                <p><strong>weight:</strong> <span id="weight"></span></p>
+                <p><strong>Birth Date:</strong> <span id="birthdate"></span></p>
+                <!-- <p><strong>Password:</strong> <span id="password"></span></p> -->
+            
             </div>
           </div>
         </div>
@@ -136,6 +141,7 @@
       </div>
     </footer>
 
+    <script type="module" src="/js/nav.js"></script>
     <script src="/js/profile.js"></script>
   </body>
 </html>

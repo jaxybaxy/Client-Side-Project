@@ -9,15 +9,13 @@
   width: 100%;
   height: fit-content;
   display: grid;
-  column-gap: 4vw;
+  column-gap: 2vw;
   grid-template-areas:
     "prodImage prodTitle prodTitle"
     "prodImage prodDesc prodDesc"
-    "prodImage priceDiv prodSale"
+    "prodImage priceDiv priceDiv"
     "prodImage prodBrand ratingDiv"
     "prodImage add2Cart add2Cart";
-
-  
 }
 .prodImage {
   width: 40vw;
@@ -43,18 +41,19 @@
   grid-area: prodBrand;
   text-align: start;
   margin: auto;
+  padding-left: 4.5vw;
 }
 .priceDiv {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   grid-area: priceDiv;
-padding-left: 10vw;
-padding-top: 3vh;
-width: auto;
+  /* padding-left: 10vw; */
+  padding-top: 3vh;
+  width: auto;
 }
 .prodPrice {
   color: red;
-  font-size: larger;
+  font-size: 3rem;
   align-self: center;
   text-decoration: line-through;
   opacity: 0.5;
@@ -62,13 +61,13 @@ width: auto;
 }
 .prodDscnt {
   font-size: 3rem;
-justify-self: center
+  justify-self: center;
 }
 .prodSale {
   grid-area: prodSale;
   background-color: rgb(251, 67, 67);
-  width: 15vh;
-  height: 15vh;
+  width: 13vh;
+  height: 13vh;
   border-radius: 50%;
   opacity: 0.8;
   display: flex;
@@ -78,7 +77,7 @@ justify-self: center
   p {
     /* position: absolute;
     top: -70px; */
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #ffffff;
     /* left: 1vh; */
   }
@@ -92,10 +91,10 @@ justify-self: center
   grid-area: ratingDiv;
 }
 .rateNum {
-    font-size: large;
-    opacity: 0.5;
-    align-self: center;
-  }
+  font-size: large;
+  opacity: 0.5;
+  align-self: center;
+}
 .star-ratings {
   color: #ccc;
   position: relative;
@@ -116,10 +115,10 @@ justify-self: center
   font-size: 2rem;
 }
 .emptyStar {
-    padding: 0;
-    z-index: 0;
-    margin-right: 1vw;
-    font-size: 2rem;
+  padding: 0;
+  z-index: 0;
+  margin-right: 1vw;
+  font-size: 2rem;
 }
 
 .add2Cart {
@@ -134,4 +133,37 @@ justify-self: center
 .add2Cart:hover {
   background-color: #f0f0f0;
   color: black;
+}
+#all-cat-container {
+  background-color: #24262b;
+  width: 25%;
+  width: 100%;
+  display: none;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 1.5vh;
+}
+#all-cat-container div {
+  text-align: center;
+  vertical-align: middle;
+  width: 20%;
+  color: #f0f0f0;
+  margin-top: 1.5vh;
+}
+#all-cat-container div a {
+  color: #f0f0f0;
+}
+#all-cat-container div:hover {
+  background-color: #f0f0f0;
+  text-align: center;
+}
+#all-cat-container div:hover a {
+  background-color: #f0f0f0;
+  text-align: center;
+  color: #24262b;
+}
+.fa-solid {
+  float: right;
+  font-size: 3rem;
+  padding-right: 2vw;
 }

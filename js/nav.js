@@ -25,4 +25,8 @@ export function cartNumber() {
   }
 }
 
+// import { cartNumber } from "./nav.js";
 
+addEventListener("DOMContentLoaded", (event) => {
+  cartNumber();
+});

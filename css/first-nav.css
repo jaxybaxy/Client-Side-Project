@@ -21,7 +21,7 @@
   margin-top: 20px;
 }
 /* search icon logo */
-#search-logo {
+#search-logo,#search-logo1 {
   width: 4vw;
   height: 2.45rem;
   position: absolute;
@@ -30,7 +30,7 @@
 /* search icon text */
 #search-text {
   width: 20vw;
-  height: 2.15rem;
+  height: 2.44rem;
   position: absolute;
   border: 0.1rem;
   border-color: black;
@@ -56,10 +56,10 @@
 #cart-n {
   text-align: center;
   position: absolute;
-  right: 0;
-  top: 0.2rem;
-  width: 30px;
-  height: 30px;
+  right: 01.7rem;
+  /* top: 0.2rem; */
+  width: 18px;
+  height: 18px;
   background-color: black;
   border-radius: 50%;
   color: aliceblue;
@@ -69,8 +69,10 @@
   height: 2.5rem;
 }
 #cart-number {
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
+  position: relative;
+
 }
 /* ---------------------------------------------------------------------- */
 /* nav using grid */
