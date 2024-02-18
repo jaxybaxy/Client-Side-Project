@@ -56,8 +56,8 @@
 #cart-n {
   text-align: center;
   position: absolute;
-  right: 0;
-  top: 0.2rem;
+  right: 01.7rem;
+  /* top: 0.2rem; */
   width: 18px;
   height: 18px;
   background-color: black;
