@@ -1,4 +1,4 @@
-let divparent = document.getElementById("all-cat-container");
+let divparent = document.getElementById("all-cat-container-nav")||document.getElementById("all-cat-container");
 let allcat1 = fetch("https://dummyjson.com/products/categories")
   .then((res) => res.json())
   .then((outputjson) => {
