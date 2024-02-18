@@ -32,33 +32,36 @@
       <div id="search-container">
         <input id="search-text" type="text" placeholder="search item" />
         <input
-          id="search-logo"
+          id="search-logo1"
           type="image"
           src="../img/search.jpg"
           alt="search logo image"
         />
       </div>
       <div id="profile-container">
-        <input
-          id="profile-logo"
-          type="image"
-          src="../img/profile.jpg"
-          alt="profile logo image"
-        />
+        <a href="profile.html">
+          <img
+            id="profile-logo"
+            src="../img/profile.jpg"
+            alt="profile logo image"
+          />
+        </a>
       </div>
       <div id="cart-container">
-        <div id="cart-l">
-          <input
-            id="cart-logo"
-            type="image"
-            src="../img/cart.jpg"
-            alt="cart logo image"
-          />
-        </div>
+        <a href="cart.html">
+          <div id="cart-l">
+            <img
+              id="cart-logo"
+              src="../img/cart.jpg"
+              alt="cart logo image"
+            />
+          </div>
+        </a>
         <div id="cart-n">
-          <div id="cart-number">1</div>
+          <div id="cart-number">0</div>
         </div>
       </div>
+      
     </div>
     <div class="divs-container">
       <div id="all-cat-container"></div>
@@ -109,9 +112,11 @@
         </div>
       </div>
     </footer>
-
+    <script src="../js/home-href.js"></script>
+    
     <script type="module" src="../js/nav.js"></script>
     <script type="module" src="../js/snglprod.js"></script>
     <script src="../js/product-cat.js"></script>
+    <script src="../js/search.js"></script>
   </body>
 </html>
