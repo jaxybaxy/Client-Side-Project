@@ -1,7 +1,5 @@
 search1()
-import { cartNumber } from "./nav.js";
 function search1() {
-  
   const prodCont = document.querySelector(".prodContainer");
   const searchParams = new URLSearchParams(window.location.search);
   let category = searchParams.get('category'); // price_descending

@@ -1,12 +1,14 @@
 #third-nav {
   margin-left: 1rem;
   margin-right: 1rem;
+  position: relative;
 }
 
 .all-cat-title {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+  position: relative;
 }
 
 .nv {
@@ -14,7 +16,7 @@
   position: relative;
 }
 
-#all-cat-container {
+#all-cat-container-nav {
   position: relative;
   border-top: solid 1px gray;
   border-bottom: solid 1px gray;
@@ -89,7 +91,7 @@
 }
 
 @media (max-width: 1220px) {
-  #all-cat-container {
+  #all-cat-container-nav {
     display: grid;
     grid-template-areas:
       "nv0 nv1 nv2 nv3 nv4 nv5 nv6 "
@@ -99,7 +101,7 @@
 }
 
 @media (max-width: 890px) {
-  #all-cat-container {
+  #all-cat-container-nav {
     display: grid;
     grid-template-areas:
       "nv0 nv1 nv2 nv3 nv4"
@@ -110,7 +112,7 @@
 }
 
 @media (max-width: 675px) {
-  #all-cat-container {
+  #all-cat-container-nav {
     display: grid;
     grid-template-areas:
       "nv0 nv1 nv2 nv3 "
@@ -122,7 +124,7 @@
 }
 
 @media (max-width: 585px) {
-  #all-cat-container {
+  #all-cat-container-nav{
     display: grid;
     grid-template-areas:
       "nv0 nv1 "

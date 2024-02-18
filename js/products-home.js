@@ -4,7 +4,7 @@ function search1() {
 
 
 
-  let searchValue1 = "sh"
+  let searchValue1 = "the"
   console.log(searchValue1);
 
 
@@ -19,7 +19,7 @@ function search1() {
         //start of if to display product
         // if (length > 0) {
           // import { cartNumber } from "./nav.js";
-          document.title = `Search:${searchValue1}`;
+          // document.title = `Search:${searchValue1}`;
           prodCont.innerHTML = ""/////addaddadd
 
           //-----------------------------------------------------------------------------------------------

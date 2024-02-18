@@ -58,8 +58,8 @@
   position: absolute;
   right: 0;
   top: 0.2rem;
-  width: 30px;
-  height: 30px;
+  width: 18px;
+  height: 18px;
   background-color: black;
   border-radius: 50%;
   color: aliceblue;
@@ -69,7 +69,7 @@
   height: 2.5rem;
 }
 #cart-number {
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
 }
 /* ---------------------------------------------------------------------- */
