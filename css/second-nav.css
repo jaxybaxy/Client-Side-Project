@@ -21,6 +21,8 @@ a:active {
   text-align: center;
   font-size: 25px;
   padding-top: 0.1px;
+  margin-top: 10px;
+    margin-bottom: 10px;
 }
 /* main container colored: gray */
 .second-nav {
