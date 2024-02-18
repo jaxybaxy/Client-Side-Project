@@ -14,9 +14,16 @@
     <script>
 
 // data from localstorage and check if found or not!
-let arrDataUserFromLocal=JSON.parse(localStorage.getItem("data"))   
+let objUser=JSON.parse(localStorage.getItem("data"))   
       if (localStorage.getItem("data")!=null) {
-        console.log("hello " + arrDataUserFromLocal[0].username)
+        console.log("hello " + objUser.username)
+        //console.log(objUser.expiry);
+       // console.log(new Date().getTime());
+        if (new Date().getTime() > objUser.expiry ) {
+          localStorage.removeItem("data")
+
+
+        }
       }
       else{
         location.replace("login.html")
