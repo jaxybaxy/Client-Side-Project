@@ -17,6 +17,8 @@ a {
 /* ============= nav  ============= */
 #first-nav {
     background-color: white;
+    top: 0;
+    z-index: 2;
 }
 /* ============= nav  ============= */
 
@@ -70,11 +72,7 @@ a {
 /* ============= container ============= */
 
 /* ============= Navbar ============= */
-.nav{
-    height: 60px;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-}
+
 /* ============= Navbar ============= */
 /* ============= Shopping ============= */
 
@@ -357,6 +355,7 @@ align-items: center;
     justify-content: center;
     align-items: center;
     display: none;
+    top: 0;
 }
 
 .popup .box {
