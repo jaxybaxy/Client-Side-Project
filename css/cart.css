@@ -197,9 +197,6 @@ color: white;
     cursor: pointer;
     transition: 0.3s;
 }
-.cart .box .remove:hover {
-    color: #000;
-}
 
 .shopping .orderSummary {
     background-color: white;
