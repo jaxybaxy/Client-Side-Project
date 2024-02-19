@@ -172,8 +172,8 @@ cartItem.forEach((e)=>{
         console.error(error);
   })
     })
-    checkcart()
 
+    checkcart()
 // Checkout Button 
 checkout.addEventListener("click" , function(e){
   if(cartItem.length == 0){
@@ -185,5 +185,6 @@ checkout.addEventListener("click" , function(e){
     setTimeout(function() {
       window.location.href = "../html/products.html" ;
     }, 3000); 
+    localStorage.setItem("cartItems" , JSON.stringify([]));
   }
 })

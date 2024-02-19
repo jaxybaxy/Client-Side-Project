@@ -78,7 +78,7 @@ a {
 
 /* ============= Shopping ============= */
 .shopping .container {
-    margin-top: 50px ;
+    margin-top: 150px ;
     margin-bottom: 50px ;
     display: flex;
     gap: 20px;
@@ -206,8 +206,6 @@ color: white;
     padding: 15px;
     margin-bottom: 20px;
     flex: 1;
-    position: sticky;
-    top: 0;
 }
 
 .shopping .orderSummary h3 {
@@ -346,7 +344,7 @@ align-items: center;
 }
 /* popUp message */ 
 .popup {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.458);
