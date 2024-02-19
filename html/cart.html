@@ -22,6 +22,13 @@
 </head>
 
   <body>
+    <div class="popup">
+      <div class="box">
+        <h2>Your Order Has Been Received</h2>
+        <i class="ri-checkbox-circle-line confirm"></i>
+        <h3>Thank You For Your Purchase</h3>
+      </div>
+    </div>
     <!-- ============= Navbar =============  -->
     <div id="first-nav">
         <div id="logo-container">
@@ -57,13 +64,18 @@
                     <li>Quantity</li>
                     <li>Total</li>
                 </ul>
+                <div class="message">
+                  <img src="../img/empty-cart.png" alt="" class="cartIcon">
+                  <h2>Your Cart Is Empty</h2>
+                  <a href="./products.html">Continue Shopping</a>
+                </div>
             </div>
                 <div class="orderSummary">
                     <h3>Order Summary</h3>
                     <h4 class>
                         total<span class="totalPrice">0</span>
                     </h4>
-                    <a href="#">Checkout Now</a>
+                    <a href="" class="checkout">Checkout Now</a>
             </div>
         </div>
     </div>

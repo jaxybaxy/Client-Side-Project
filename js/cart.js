@@ -2,10 +2,21 @@
 let cart = document.querySelector(".cart");
 let cartItem = JSON.parse(localStorage.getItem("cartItems"));
 let totalPrice = document.querySelector(".totalPrice");
-let checkout = document.querySelector(".oraderSummary a");
+let checkout = document.querySelector(".checkout");
 let cartNumber = document.getElementById("cart-number");
+let emptyCart = document.querySelector(".message");
+let head = document.querySelector(".head");
+let popUp = document.querySelector(".popup");
 let total = 0;
 let quant = 0;
+function checkcart(){
+  // check if the cart is empty 
+  if(cartItem.length == 0){
+    emptyCart.style.display = "flex";
+    head.style.display = "none";
+  }
+}
+
 cartItem.forEach((e)=>{
   fetch(`https://dummyjson.com/products/${e.id}`)
   .then((res) => {
@@ -20,8 +31,6 @@ cartItem.forEach((e)=>{
       let title = data.title;
       let desc = data.description;
       let price = (data.discountPercentage < 10) ? data.price : Math.ceil(data.price - (data.price * (data.discountPercentage/100))) ;
-      cartItem.filter((i) => {
-          if (i.id == id) {
           // Create cart box
           let cartBox = document.createElement("div");
           cartBox.classList.add("box");
@@ -61,7 +70,7 @@ cartItem.forEach((e)=>{
           
           // Amount
           let amountBox = document.createElement("span");
-          amountBox.innerText = i.quantity;
+          amountBox.innerText = e.quantity;
           amountBox.classList.add("amount");
           
           // Add price
@@ -93,14 +102,6 @@ cartItem.forEach((e)=>{
           quantityBox.appendChild(decrementBtn);
           cartBox.appendChild(totalBox);
           cartBox.appendChild(removeIcon);
-          
-          function showCartStatus(cart) {
-            if (cart.length === 1) {
-                console.log("Your cart is empty.");
-            } else {
-                console.log("Your cart contains items.");
-            }
-        }
         
           // cart number
             function cartNum(change){
@@ -113,14 +114,15 @@ cartItem.forEach((e)=>{
             amount += change;
             amountBox.innerText = amount;
             // Save the amount in CartItem
-            i.quantity = amount;
+            e.quantity = amount;
             // remove product with decrement
             if(amount == 0){
                 cartBox.remove()
               }
-            if (i.quantity == 0){
-                cartItem.splice(cartItem.indexOf(i) , 1)
+            if (e.quantity == 0){
+                cartItem.splice(cartItem.indexOf(e) , 1)
             }
+            checkcart()
             localStorage.setItem("cartItems" , JSON.stringify(cartItem));
         }
         // update the product total
@@ -152,23 +154,35 @@ cartItem.forEach((e)=>{
           removeIcon.addEventListener("click" ,()=>{
             cartBox.remove();
             // remove from localStorage
-                cartItem.splice(cartItem.indexOf(i) , 1)
+                cartItem.splice(cartItem.indexOf(e) , 1)
                 localStorage.setItem("cartItems" , JSON.stringify(cartItem))
                 // updateTotal;
                 total -= parseInt(totalBox.innerText);
                 totalPrice.innerText = `${total}$`
-                cartNum(-i.quantity);
+                cartNum(-e.quantity);
+                  // check if the cart is empty 
+                checkcart()
               })
-              cartNum(i.quantity);
+              cartNum(e.quantity);
             changeProductTotal();
             total += parseInt(totalBox.innerText);
             totalPrice.innerText = `${total}$`;
-        }
-      });
     }).catch((error) => {
         console.error(error);
   })
     })
+    checkcart()
 
-
-
+// Checkout Button 
+checkout.addEventListener("click" , function(e){
+  if(cartItem.length == 0){
+    e.preventDefault();
+  }
+  else {
+    popUp.style.display = "flex";
+    e.preventDefault();
+    setTimeout(function() {
+      window.location.href = "../html/products.html" ;
+    }, 3000); 
+  }
+})
