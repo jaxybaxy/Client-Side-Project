@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="name-admin"></div>
+    <div class="logout_up">
+      <button class="logout">logout</button>
+      </div>
+
+    <script>
+
+const userFetchedData = async (token) => {
+  try {
+    if (token) {
+      const data = await fetch("https://dummyjson.com/auth/me", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return data.json();
+    } else {
+      // If token doesn't exist, redirect to login page or display message
+      window.location.href = "login.html"; // Redirect to login page
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+document.addEventListener("DOMContentLoaded", async function () {
+  const data = localStorage.getItem("data");
+  if (data) {
+    let parsedData = JSON.parse(data);
+    let userData = await userFetchedData(parsedData.token);
+    console.log(userData);
+
+    if (userData.name !== "TokenExpiredError") {
+    console.log("you still have access ");
+    } else {
+       alert("Please Login First");
+      window.location.href = "login.html";
+    }
+  } else {
+    // If token doesn't exist in local storage, redirect to login page or display message
+     //alert("Please Login First");
+    window.location.href = "login.html"; // Redirect to login page
+  }
+});
+// here button logout of user
+let btnLogout=document.querySelector(".logout")
+btnLogout.addEventListener("click",function(){
+localStorage.removeItem("data")
+location.replace("login.html")
+})
+
+</script>
+</body>
+</html>
