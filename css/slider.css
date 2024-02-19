@@ -58,6 +58,17 @@
     margin-right: 0;
   }
 }
+@media (max-width: 720px) {
+ 
+  #slide-container {
+    display: none;
+  }
+  br{
+    display: none;
+  }
+}
+
+
 @media (max-width: 340px) {
   #slide-container {
     display: none;

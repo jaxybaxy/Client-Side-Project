@@ -4,7 +4,7 @@
 padding: 0;
 margin: 0;
 box-sizing: border-box;
-font-family: "Poppins", sans-serif;
+/* font-family: "Poppins", sans-serif; */
 }
 body {
     background-color: #f4f4f4;
@@ -320,4 +320,8 @@ text-align: center;
 display: inline-flex !important;
 justify-content: center;
 align-items: center;
+}
+.footer {
+    position: relative;
+    bottom: -68px;
 }
