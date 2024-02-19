@@ -13,12 +13,12 @@ for (let i = 0; i < 2; i++) {
  });
 })
 
-let arrDataUserFromLocal=JSON.parse(localStorage.getItem("data"))   
-      if (localStorage.getItem("data")!=null) {
-        location.assign("home.html")
+// let arrDataUserFromLocal=JSON.parse(localStorage.getItem("data"))   
+//       if (localStorage.getItem("data")!=null) {
+//         location.assign("login.html")
 
     
-      }
+//       }
      
 
 

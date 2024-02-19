@@ -110,6 +110,18 @@ body {
   margin-right: 5px;
 }
 
+.logout{
+  
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  
+}
+
 @media (max-width: 1100px) {
   .profile-image {
     display: none; /* Hide the image when screen width is less than or equal to 600px */
