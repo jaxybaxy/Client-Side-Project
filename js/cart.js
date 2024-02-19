@@ -26,7 +26,6 @@ cartItem.forEach((e)=>{
     return res.json();
 })
 .then((data) => {
-    let id = data.id;
       let image = data.images[0];
       let title = data.title;
       let desc = data.description;
@@ -37,7 +36,7 @@ cartItem.forEach((e)=>{
 
           // Create product
           let product = document.createElement("a");
-          product.href = `snglprod.html?id=${i.id}`;
+          product.href = `snglprod.html?id=${e.id}`;
           product.classList.add("product");
           
           // Add image of product
