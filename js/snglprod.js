@@ -3,6 +3,9 @@ const prodCard = document.getElementsByClassName("prodCard")[0];
 const searchParams = new URLSearchParams(window.location.search);
 let prodID = searchParams.get("id"); // price_descending
 
+
+document.addEventListener("DOMContentLoaded", async function () {
+
 fetch(`https://dummyjson.com/products/${prodID}`)
   .then((res) => res.json())
   .then((product) => {
@@ -155,3 +158,5 @@ menu.addEventListener("click", () => {
     console.log("flex");
   }
 });
+
+})

@@ -181,7 +181,6 @@
   margin-right: 1vw;
 }
 
-
 /* Media for small devices */
 @media only screen and (max-width: 768px) {
   /* Product card */
@@ -193,13 +192,10 @@
     height: 50%;
   }
 
-
   /* footer */
   .footer {
-    text-align: center ;
-    
+    text-align: center;
   }
-  
 }
 
 /* Media for  tablets */
@@ -213,5 +209,11 @@
   }
   .prodImage {
     height: 50%;
+  }
+  .prodDetails {
+    bottom: 15vh;
+  }
+  .priceDiv {
+    bottom: -1.5vh;
   }
 }
