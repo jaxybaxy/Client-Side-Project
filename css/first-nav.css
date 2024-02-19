@@ -84,9 +84,9 @@
 /* nav using grid */
 /* parent */
 #first-nav {
-  /* z-index: 1;
+  z-index: 1;
   background-color: white;
-  position: fixed; */
+  position: fixed;
   width: 100%;
   display: grid;
   grid-template-areas: "logo home about contact search profile cart";
