@@ -22,7 +22,7 @@ function search1() {
         if (length > 0) {
           // import { cartNumber } from "./nav.js";
           document.title = `Search:${searchValue1}`;
-          prodCont.innerHTML = ""/////addaddadd
+          prodCont.innerHTML = ""//remove items
 
           //-----------------------------------------------------------------------------------------------
           //start of foreach 
@@ -67,10 +67,7 @@ function search1() {
             if (element.discountPercentage >= 10) {
               prodDscnt.classList.add("prodDscnt");
               prodPrice.classList.add("prodPrice");
-              // let prodSale = document.createElement("p");
-              // prodSale.innerHTML = `<p>${Math.ceil(element.discountPercentage)}%<br>OFF</p>`;
-              // prodSale.classList.add("prodSale");
-              // priceDiv.appendChild(prodSale);
+          
             } else {
               prodPrice.style.fontSize = "2rem";
               prodPrice.classList.add("prodDscnt");
@@ -130,20 +127,6 @@ function search1() {
           alert("no matched value")
         }
       }); //end of second .then
-
-    // ---------------------------------------------------------------------------------
-    //out of second .then
-    // const menu = document.getElementsByClassName('fa-solid')[0];
-    // const categories = document.getElementById('all-cat-container');
-    // menu.addEventListener('click' , ()=>{
-    //   if (categories.style.display == 'none'){
-    //     console.log('none');
-    //     categories.style.display = 'flex';
-    //   } else {
-    //     categories.style.display = 'none';
-    //     console.log('flex');
-    //   }
-    // })
 
     // ---------------------------------------------------------------------------------
   }else {

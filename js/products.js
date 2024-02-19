@@ -1,9 +1,5 @@
 import { cartNumber } from "./nav.js";
 
-// addEventListener("DOMContentLoaded", (event) => {
-//   cartNumber();
-// });
-
 const prodCont = document.querySelector(".prodContainer");
 const searchParams = new URLSearchParams(window.location.search);
 if (searchParams.get("category")) {

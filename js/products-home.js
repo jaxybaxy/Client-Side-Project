@@ -10,19 +10,13 @@ function search1() {
   console.log(searchValue1);
 
 
-  // if (searchValue1.length > 0) {
     fetch(`https://dummyjson.com/products/search?q=${searchValue1}`)
       .then((res) => res.json())
       .then((products) => {
         let allItems = products.products;
         console.log(allItems)
         length = Object.keys(allItems).length
-        //----------------------------------------------------------------------
-        //start of if to display product
-        // if (length > 0) {
-          // import { cartNumber } from "./nav.js";
-          // document.title = `Search:${searchValue1}`;
-          prodCont.innerHTML = ""/////addaddadd
+          prodCont.innerHTML = ""//remove all item 
 
           //-----------------------------------------------------------------------------------------------
           //start of foreach 
@@ -67,10 +61,7 @@ function search1() {
             if (element.discountPercentage >= 10) {
               prodDscnt.classList.add("prodDscnt");
               prodPrice.classList.add("prodPrice");
-              // let prodSale = document.createElement("p");
-              // prodSale.innerHTML = `<p>${Math.ceil(element.discountPercentage)}%<br>OFF</p>`;
-              // prodSale.classList.add("prodSale");
-              // priceDiv.appendChild(prodSale);
+
             } else {
               prodPrice.style.fontSize = "2rem";
               prodPrice.classList.add("prodDscnt");
@@ -123,21 +114,8 @@ function search1() {
                cartNumber();
              });
            };
-           //end of content out foreach but in  if to display product
-          // end of if to display product
-          // ---------------------------------------------------------------------
-        // }else {
-        //   alert("no matched value")
-        // }
+
       }); //end of second .then
 
-    // ---------------------------------------------------------------------------------
-    //out of second .then
-
-
-    // ---------------------------------------------------------------------------------
-//   }else {
-//     alert("please, type product name..")
-//   }
 }
 

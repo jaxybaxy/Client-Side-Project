@@ -84,6 +84,9 @@
 /* nav using grid */
 /* parent */
 #first-nav {
+  /* z-index: 1;
+  background-color: white;
+  position: fixed; */
   width: 100%;
   display: grid;
   grid-template-areas: "logo home about contact search profile cart";
@@ -142,30 +145,9 @@
     display: none;
   }
 
-  /* #home {
-    display: none;
-  } */
+
 
   #contact {
     display: none;
   }
 }
-
-/* 
-@media (max-width: 340px) {
-  #first-nav {
-    grid-template-areas: "logo cart";
-  }
-  #profile-container {
-    display: none;
-  }
-}
-@media (max-width: 290px) {
-  #first-nav {
-    grid-template-areas: "logo";
-    margin-left: 2vw;
-  }
-  #cart-container {
-    display: none;
-  }
-} */
