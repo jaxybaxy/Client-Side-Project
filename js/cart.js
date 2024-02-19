@@ -36,7 +36,8 @@ cartItem.forEach((e)=>{
           cartBox.classList.add("box");
 
           // Create product
-          let product = document.createElement("div");
+          let product = document.createElement("a");
+          product.href = `snglprod.html?id=${i.id}`;
           product.classList.add("product");
           
           // Add image of product

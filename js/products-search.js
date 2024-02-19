@@ -1,3 +1,4 @@
+import { cartNumber } from "./nav.js";
 search1()
 function search1() {
   const prodCont = document.querySelector(".prodContainer");
