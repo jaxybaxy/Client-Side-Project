@@ -168,7 +168,7 @@ let objUser={username:data.username,token:data.token}
              //  arrayUsers.push(obj)
              localStorage.setItem("data",JSON.stringify(objUser))
             //  console.log(` and Your token for next steps is: ${data.token} `)
-             location.replace("home.html");
+             location.replace("index.html");
 
 }
     })
