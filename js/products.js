@@ -106,11 +106,11 @@ fetch(link)
 const menu = document.getElementsByClassName("fa-solid")[0];
 const categories = document.getElementById("all-cat-container");
 menu.addEventListener("click", () => {
-  if (categories.style.display == "none") {
-    console.log("none");
-    categories.style.display = "flex";
-  } else {
+  if (categories.style.display != "none") {
     categories.style.display = "none";
     console.log("flex");
-  }
+  } else {
+    console.log("none");
+    categories.style.display = "flex";
+  } 
 });
