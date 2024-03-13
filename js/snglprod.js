@@ -16,7 +16,8 @@ fetch(`https://dummyjson.com/products/${prodID}`)
     prodImage.classList.add("prodImage");
     prodCard.appendChild(prodImage);
     // return product , prodImage;
-    let i = 0;
+    prodImage.style.backgroundImage = `url(${images[0]})`;
+    let i = 1;
     setInterval(() => {
       prodImage.style.backgroundImage = `url(${images[i]})`;
       i++;
